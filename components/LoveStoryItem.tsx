@@ -11,7 +11,7 @@ export const LoveStoryItem: React.FC<LoveStoryItemProps> = ({ story, index }) =>
   const isEven = index % 2 === 0;
 
   return (
-    <div className="mb-16 flex flex-col md:flex-row items-center" data-aos={isEven ? "fade-right" : "fade-left"}>
+    <div className="mb-16 flex flex-col md:flex-row items-center" data-aos="fade-right">
         <div className={`w-full md:w-5/12 ${isEven ? 'md:pr-8' : 'md:pl-8 md:order-2'}`}>
             <img src={story.imageUrl} alt={story.title} className="rounded-lg shadow-xl w-full object-cover aspect-video md:aspect-square"/>
         </div>

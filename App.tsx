@@ -84,14 +84,19 @@ const App: React.FC = () => {
             <main className={`transition-opacity duration-1000 ${isCoverOpen ? 'opacity-100' : 'opacity-0'}`}>
                 {/* Hero Section */}
                 <section 
-                    className="h-screen w-full flex flex-col justify-center items-center text-white text-center bg-cover bg-center"
+                    className="relative h-screen w-full flex flex-col justify-center items-center text-white text-center bg-cover bg-center"
                     style={{ backgroundImage: 'url(https://i.imgur.com/GKInTr8.jpeg)' }}
                 >
                     <div className="absolute inset-0 bg-black/35"></div>
-                    <div className="relative z-10 p-9" data-aos="fade-down" data-aos-delay="500">
+                    <div className="relative z-10 p-9" data-aos="fade-down" data-aos-delay="600">
                         <h2 className="font-playfair text-3xl md:text-4xl">The Wedding of</h2>
                         <h1 className="font-playfair text-7xl md:text-9xl my-4">AGIL &amp; AJIZAH</h1>
                         <p className="text-xl md:text-2xl border-y-2 border-white/50 py-2 inline-block px-4">{events[0].date.toLocaleDateString('id-ID', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '. ')}</p>
+                    </div>
+                    <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white opacity-75" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
                     </div>
                 </section>
                 
