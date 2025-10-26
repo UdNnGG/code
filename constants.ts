@@ -23,7 +23,7 @@ export const bride: Person = {
 export const events: EventDetails[] = [
     {
         name: 'Akad Nikah',
-        date: new Date('2026-08-16T08:00:00'),
+        date: new Date('2025-12-25T08:00:00'),
         time: 'Pukul : 08:00 WIB',
         venue: '[Nama Gedung/Lokasi]',
         address: '[Alamat Lengkap Lokasi Akad]',
@@ -31,7 +31,7 @@ export const events: EventDetails[] = [
     },
     {
         name: 'Resepsi',
-        date: new Date('2026-08-16T10:00:00'),
+        date: new Date('2025-12-25T10:00:00'),
         time: 'Pukul : 10:00 WIB - Selesai',
         venue: '[Nama Gedung/Lokasi]',
         address: '[Alamat Lengkap Lokasi Resepsi]',

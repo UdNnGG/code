@@ -93,9 +93,9 @@ const App: React.FC = () => {
                         <h1 className="font-playfair text-7xl md:text-9xl my-4">AGIL &amp; AJIZAH</h1>
                         <p className="text-xl md:text-2xl border-y-2 border-white/50 py-2 inline-block px-4">{events[0].date.toLocaleDateString('id-ID', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '. ')}</p>
                     </div>
-                    <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white opacity-75" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 animate-pulse-scale">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5" />
                         </svg>
                     </div>
                 </section>
@@ -108,28 +108,31 @@ const App: React.FC = () => {
                 </section>
 
                 {/* Bride & Groom Section */}
-                <section className="py-20 px-6 text-center bg-background bg-cover bg-center" style={{ backgroundImage: 'url(https://picsum.photos/1000/1200?blur=2)' }}>
-                    <h2 className="font-playfair text-4xl md:text-5xl text-text-primary" data-aos="fade-up">Bride & Groom</h2>
-                    <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-20 mt-12">
-                       {/* Groom */}
-                       <div className="flex flex-col items-center" data-aos="fade-up">
-                           <img src="https://picsum.photos/400/500" alt="Groom" className="w-48 h-64 object-cover rounded-t-full shadow-lg"/>
-                           <h3 className="font-playfair text-4xl mt-4 text-accent">{groom.nickname}</h3>
-                           <p className="font-semibold text-lg text-text-primary mt-1">{groom.fullName}</p>
-                           <p className="text-text-secondary mt-2">Putra dari</p>
-                           <p className="text-text-primary">{groom.fatherName} & {groom.motherName}</p>
-                       </div>
-                       
-                       <div className="font-playfair text-6xl text-accent" data-aos="zoom-in" data-aos-delay="100">&</div>
+                <section className="relative py-20 px-6 text-center bg-cover bg-center" style={{ backgroundImage: 'url(https://i.imgur.com/9egkb7a.jpeg)' }}>
+                    <div className="absolute inset-0 bg-black/50"></div>
+                    <div className="relative z-10">
+                        <h2 className="font-playfair text-4xl md:text-5xl text-white" data-aos="fade-up">Bride & Groom</h2>
+                        <div className="flex flex-col md:flex-row justify-center items-center gap-12 mt-12">
+                           {/* Groom */}
+                           <div className="flex flex-col items-center w-60 text-center" data-aos="fade-up">
+                               <img src="https://i.imgur.com/qXWWaks.jpeg" alt="Groom" className="w-48 h-64 object-cover rounded-t-full shadow-lg"/>
+                               <h3 className="font-playfair text-4xl mt-4 text-white">AGIL</h3>
+                               <p className="font-semibold text-lg text-white/90 mt-1">AGIL ADI SAPUTRO</p>
+                               <p className="text-white/80 mt-2">Putra Pertama dari</p>
+                               <p className="text-white/90">Bapak Sugeng & {groom.motherName}</p>
+                           </div>
+                           
+                           <div className="font-playfair text-6xl text-accent" data-aos="zoom-in" data-aos-delay="100">&</div>
 
-                       {/* Bride */}
-                       <div className="flex flex-col items-center" data-aos="fade-up" data-aos-delay="200">
-                           <img src="https://picsum.photos/400/501" alt="Bride" className="w-48 h-64 object-cover rounded-t-full shadow-lg"/>
-                           <h3 className="font-playfair text-4xl mt-4 text-accent">{bride.nickname}</h3>
-                           <p className="font-semibold text-lg text-text-primary mt-1">{bride.fullName}</p>
-                           <p className="text-text-secondary mt-2">Putri dari</p>
-                           <p className="text-text-primary">{bride.fatherName} & {bride.motherName}</p>
-                       </div>
+                           {/* Bride */}
+                           <div className="flex flex-col items-center w-60 text-center" data-aos="fade-up">
+                               <img src="https://i.imgur.com/zfPFc1S.jpeg" alt="Bride" className="w-48 h-64 object-cover rounded-t-full shadow-lg"/>
+                               <h3 className="font-playfair text-4xl mt-4 text-white">AJIZAH</h3>
+                               <p className="font-semibold text-lg text-white/90 mt-1">SITI AJIZAH</p>
+                               <p className="text-white/80 mt-2">Putri Kedua dari</p>
+                               <p className="text-white/90">Bapak Ipong & Ibu Leni</p>
+                           </div>
+                        </div>
                     </div>
                 </section>
                 
@@ -137,7 +140,7 @@ const App: React.FC = () => {
                 <section className="py-20 px-6 text-center bg-background">
                     <h2 className="font-playfair text-4xl md:text-5xl text-text-primary" data-aos="fade-up">Wedding Event</h2>
                     <p className="max-w-2xl mx-auto mt-4 text-text-secondary" data-aos="fade-up" data-aos-delay="200">
-                        [Placeholder: Kalimat pembuka untuk bagian acara, tentang syukur dan menanti hari istimewa.]
+                        “Waktu telah membawa kami sampai di titik ini — hari yang kami tunggu dengan penuh doa dan kebahagiaan.”
                     </p>
                     <Countdown targetDate={events[0].date} />
                     
