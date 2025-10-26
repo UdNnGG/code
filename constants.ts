@@ -7,8 +7,8 @@ export const cover: CoverDetails = {
 };
 
 export const groom: Person = {
-    nickname: '[Pria]',
-    fullName: '[Nama Lengkap Mempelai Pria]',
+    nickname: 'Agil',
+    fullName: 'Agil Adi Saputro',
     fatherName: '[Nama Ayah Mempelai Pria]',
     motherName: '[Nama Ibu Mempelai Pria]',
 };
@@ -22,17 +22,9 @@ export const bride: Person = {
 
 export const events: EventDetails[] = [
     {
-        name: 'Akad Nikah',
-        date: new Date('2025-12-25T08:00:00'),
-        time: 'Pukul : 08:00 WIB',
-        venue: '[Nama Gedung/Lokasi]',
-        address: '[Alamat Lengkap Lokasi Akad]',
-        mapLink: 'https://maps.google.com',
-    },
-    {
         name: 'Resepsi',
-        date: new Date('2025-12-25T10:00:00'),
-        time: 'Pukul : 10:00 WIB - Selesai',
+        date: new Date('2025-12-25T09:00:00'),
+        time: 'Pukul : 09:00 WIB - Selesai',
         venue: '[Nama Gedung/Lokasi]',
         address: '[Alamat Lengkap Lokasi Resepsi]',
         mapLink: 'https://maps.google.com',
@@ -58,14 +50,11 @@ export const loveStories: LoveStory[] = [
 ];
 
 export const galleryItems: GalleryItem[] = [
-    { src: 'https://picsum.photos/800/1200?random=10', caption: 'Momen bahagia saat pre-wedding di taman bunga.', layout: 'overlay' },
-    { src: 'https://picsum.photos/800/1200?random=11', caption: 'Canda tawa di antara senja yang hangat.', layout: 'split-left' },
-    { src: 'https://picsum.photos/800/1200?random=12', caption: 'Saling menatap, penuh harap dan cinta.', layout: 'split-right' },
-    { src: 'https://picsum.photos/800/1200?random=13', caption: 'Langkah pertama menuju masa depan bersama.' },
-    { src: 'https://picsum.photos/800/1200?random=14', caption: 'Kenangan manis di tempat pertama kali bertemu.', layout: 'split-left' },
-    { src: 'https://picsum.photos/800/1200?random=15', caption: 'Menikmati secangkir kopi dan cerita.', layout: 'overlay' },
-    { src: 'https://picsum.photos/800/1200?random=16', caption: 'Petualangan baru akan segera dimulai.', layout: 'split-right' },
-    { src: 'https://picsum.photos/800/1200?random=17', caption: 'Selalu bersama dalam suka dan duka.', layout: 'split-left' },
+    { src: 'https://picsum.photos/800/1200?random=10',  layout: 'overlay' },
+    { src: 'https://picsum.photos/800/1200?random=11', layout: 'split-left' },
+    { src: 'https://picsum.photos/800/1200?random=12',  layout: 'split-right' },
+    { src: 'https://picsum.photos/800/1200?random=16', layout: 'split-right' },
+    { src: 'https://picsum.photos/800/1200?random=17',  layout: 'split-left' },
 ];
 
 export const gifts: Gift[] = [
