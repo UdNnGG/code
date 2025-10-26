@@ -1,5 +1,10 @@
 
-import type { Person, EventDetails, LoveStory, Gift } from './types';
+import type { Person, EventDetails, LoveStory, Gift, GalleryItem, CoverDetails } from './types';
+
+export const cover: CoverDetails = {
+    imageUrl: 'https://i.imgur.com/7yHF64i.jpeg',
+    imagePosition: 'center center', // You can change this to 'top', 'bottom', or even '50% 25%' to adjust the focus.
+};
 
 export const groom: Person = {
     nickname: '[Pria]',
@@ -52,15 +57,15 @@ export const loveStories: LoveStory[] = [
     },
 ];
 
-export const galleryImages: string[] = [
-    'https://picsum.photos/600/800?random=10',
-    'https://picsum.photos/800/600?random=11',
-    'https://picsum.photos/600/800?random=12',
-    'https://picsum.photos/800/600?random=13',
-    'https://picsum.photos/600/800?random=14',
-    'https://picsum.photos/800/600?random=15',
-    'https://picsum.photos/600/800?random=16',
-    'https://picsum.photos/800/600?random=17',
+export const galleryItems: GalleryItem[] = [
+    { src: 'https://picsum.photos/800/1200?random=10', caption: 'Momen bahagia saat pre-wedding di taman bunga.', layout: 'overlay' },
+    { src: 'https://picsum.photos/800/1200?random=11', caption: 'Canda tawa di antara senja yang hangat.', layout: 'split-left' },
+    { src: 'https://picsum.photos/800/1200?random=12', caption: 'Saling menatap, penuh harap dan cinta.', layout: 'split-right' },
+    { src: 'https://picsum.photos/800/1200?random=13', caption: 'Langkah pertama menuju masa depan bersama.' },
+    { src: 'https://picsum.photos/800/1200?random=14', caption: 'Kenangan manis di tempat pertama kali bertemu.', layout: 'split-left' },
+    { src: 'https://picsum.photos/800/1200?random=15', caption: 'Menikmati secangkir kopi dan cerita.', layout: 'overlay' },
+    { src: 'https://picsum.photos/800/1200?random=16', caption: 'Petualangan baru akan segera dimulai.', layout: 'split-right' },
+    { src: 'https://picsum.photos/800/1200?random=17', caption: 'Selalu bersama dalam suka dan duka.', layout: 'split-left' },
 ];
 
 export const gifts: Gift[] = [

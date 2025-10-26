@@ -34,3 +34,14 @@ export interface Gift {
     accountHolder: string;
     logoUrl?: string; // Optional if you want to use img tags with src
 }
+
+export interface GalleryItem {
+  src: string;
+  caption: string;
+  layout?: 'overlay' | 'split-left' | 'split-right';
+}
+
+export interface CoverDetails {
+  imageUrl: string;
+  imagePosition?: string; // E.g., 'center center', 'top center', '25% 50%'
+}

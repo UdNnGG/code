@@ -9,7 +9,7 @@ import { Lightbox } from './components/Lightbox';
 import { LoveStoryItem } from './components/LoveStoryItem';
 import { GiftCard } from './components/GiftCard';
 import type { Comment } from './types';
-import { groom, bride, events, loveStories, galleryImages, gifts, physicalGift } from './constants';
+import { groom, bride, events, loveStories, galleryItems, gifts, physicalGift, cover } from './constants';
 
 const App: React.FC = () => {
     const [isCoverOpen, setCoverOpen] = useState(false);
@@ -60,12 +60,16 @@ const App: React.FC = () => {
         <>
             <div 
                 className={`fixed inset-0 bg-background z-50 flex items-center justify-center transition-transform duration-[1.5s] ease-in-out ${isCoverOpen ? '-translate-y-full' : 'translate-y-0'}`}
-                style={{ backgroundImage: 'url(https://picsum.photos/1080/1920?grayscale)' }}
+                style={{ 
+                    backgroundImage: `url(${cover.imageUrl})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: cover.imagePosition || 'center center',
+                }}
             >
                 <div className="absolute inset-0 bg-black/50"></div>
                 <div className="relative text-center text-white p-8" data-aos="fade-up">
                     <h2 className="font-playfair text-2xl md:text-3xl">The Wedding of</h2>
-                    <h1 className="font-playfair text-6xl md:text-8xl my-4">{groom.nickname} &amp; {bride.nickname}</h1>
+                    <h1 className="font-playfair text-6xl md:text-8xl my-4">Agil &amp; Ajizah</h1>
                     <p className="mt-8 text-lg">Kepada Yth.</p>
                     <p className="font-bold text-2xl">[Nama Tamu]</p>
                     <button
@@ -81,12 +85,12 @@ const App: React.FC = () => {
                 {/* Hero Section */}
                 <section 
                     className="h-screen w-full flex flex-col justify-center items-center text-white text-center bg-cover bg-center"
-                    style={{ backgroundImage: 'url(https://picsum.photos/1080/1921?grayscale)' }}
+                    style={{ backgroundImage: 'url(https://i.imgur.com/GKInTr8.jpeg)' }}
                 >
-                    <div className="absolute inset-0 bg-black/50"></div>
-                    <div className="relative z-10 p-4" data-aos="fade-down" data-aos-delay="500">
+                    <div className="absolute inset-0 bg-black/35"></div>
+                    <div className="relative z-10 p-9" data-aos="fade-down" data-aos-delay="500">
                         <h2 className="font-playfair text-3xl md:text-4xl">The Wedding of</h2>
-                        <h1 className="font-playfair text-7xl md:text-9xl my-4">{groom.nickname} &amp; {bride.nickname}</h1>
+                        <h1 className="font-playfair text-7xl md:text-9xl my-4">AGIL &amp; AJIZAH</h1>
                         <p className="text-xl md:text-2xl border-y-2 border-white/50 py-2 inline-block px-4">{events[0].date.toLocaleDateString('id-ID', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '. ')}</p>
                     </div>
                 </section>
@@ -94,16 +98,16 @@ const App: React.FC = () => {
                 {/* Quran Verse Section */}
                 <section className="py-20 px-6 text-center bg-background" data-aos="fade-up">
                      <p className="text-3xl text-accent font-playfair mb-4">“</p>
-                    <p className="max-w-3xl mx-auto italic text-text-secondary">"[Placeholder: Kutipan Ayat Suci]"</p>
+                    <p className="max-w-3xl mx-auto italic text-gray-700 leading-relaxed">"Dan Diantara Tanda-tanda (Kebesaran) -Nya Ialah Dia Menciptakan Pasangan-pasangan Untukmu Dari Jenismu Sendiri, Agar Kamu Cenderung Dan Merasa Tenteram Kepadanya, Dan Dia Menjadikan Diantaramu Rasa Kasih Dan Sayang. Sungguh, Pada Yang Demikian Itu Benar-benar Terdapat Tanda-tanda (Kebesaran Allah) Bagi Kaum Yang Berfikir"</p>
                     <p className="mt-4 font-semibold text-text-primary">(Q.S. Ar-Rum: 21)</p>
                 </section>
 
                 {/* Bride & Groom Section */}
-                <section className="py-20 px-6 text-center bg-background" style={{ backgroundImage: 'url(https://picsum.photos/1000/1200?blur=2)' }}>
+                <section className="py-20 px-6 text-center bg-background bg-cover bg-center" style={{ backgroundImage: 'url(https://picsum.photos/1000/1200?blur=2)' }}>
                     <h2 className="font-playfair text-4xl md:text-5xl text-text-primary" data-aos="fade-up">Bride & Groom</h2>
                     <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-20 mt-12">
                        {/* Groom */}
-                       <div className="flex flex-col items-center" data-aos="fade-right">
+                       <div className="flex flex-col items-center" data-aos="fade-up">
                            <img src="https://picsum.photos/400/500" alt="Groom" className="w-48 h-64 object-cover rounded-t-full shadow-lg"/>
                            <h3 className="font-playfair text-4xl mt-4 text-accent">{groom.nickname}</h3>
                            <p className="font-semibold text-lg text-text-primary mt-1">{groom.fullName}</p>
@@ -111,10 +115,10 @@ const App: React.FC = () => {
                            <p className="text-text-primary">{groom.fatherName} & {groom.motherName}</p>
                        </div>
                        
-                       <div className="font-playfair text-6xl text-accent" data-aos="zoom-in">&</div>
+                       <div className="font-playfair text-6xl text-accent" data-aos="zoom-in" data-aos-delay="100">&</div>
 
                        {/* Bride */}
-                       <div className="flex flex-col items-center" data-aos="fade-left">
+                       <div className="flex flex-col items-center" data-aos="fade-up" data-aos-delay="200">
                            <img src="https://picsum.photos/400/501" alt="Bride" className="w-48 h-64 object-cover rounded-t-full shadow-lg"/>
                            <h3 className="font-playfair text-4xl mt-4 text-accent">{bride.nickname}</h3>
                            <p className="font-semibold text-lg text-text-primary mt-1">{bride.fullName}</p>
@@ -163,11 +167,11 @@ const App: React.FC = () => {
                 {/* Gallery Section */}
                 <section className="py-20 bg-background">
                     <h2 className="font-playfair text-4xl md:text-5xl text-text-primary text-center mb-12" data-aos="fade-up">Gallery</h2>
-                    <Gallery images={galleryImages} onImageClick={setLightboxImage} />
+                    <Gallery images={galleryItems} onImageClick={setLightboxImage} />
                 </section>
                 
                  {/* Gift Section */}
-                <section className="py-20 px-6 text-center bg-background" style={{ backgroundImage: 'url(https://picsum.photos/1000/800?blur=2)' }}>
+                <section className="py-20 px-6 text-center bg-background bg-cover bg-center" style={{ backgroundImage: 'url(https://picsum.photos/1000/800?blur=2)' }}>
                     <h2 className="font-playfair text-4xl md:text-5xl text-text-primary" data-aos="fade-up">Kirim Hadiah</h2>
                     <p className="max-w-2xl mx-auto mt-4 text-text-secondary" data-aos="fade-up" data-aos-delay="200">
                         [Placeholder: Kalimat pembuka untuk bagian hadiah, sebagai pengganti kehadiran.]
@@ -202,9 +206,9 @@ const App: React.FC = () => {
                     className="py-20 px-6 text-center text-white bg-cover bg-center"
                     style={{ backgroundImage: 'url(https://picsum.photos/1080/800?grayscale)' }}
                 >
-                    <div className="absolute inset-0 bg-black/60"></div>
+                    <div className="absolute inset-0 bg-black/75"></div>
                      <div className="relative z-10" data-aos="fade-up">
-                        <p className="max-w-3xl mx-auto italic">
+                        <p className="max-w-3xl mx-auto italic leading-relaxed">
                            [Placeholder: Ucapan terima kasih atas kehadiran dan doa restu.]
                         </p>
                         <p className="mt-8">Kami yang berbahagia,</p>
